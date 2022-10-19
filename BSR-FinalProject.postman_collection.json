@@ -1,0 +1,645 @@
+{
+	"info": {
+		"_postman_id": "f6c5a17a-972e-46b5-964d-64167b2c6ca9",
+		"name": "BSR-FinalProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13673646"
+	},
+	"item": [
+		{
+			"name": "Todo Admin",
+			"item": [
+				{
+					"name": "SignUp Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"superadmin\",\r\n    \"password\":\"syahalam\",\r\n    \"firstName\":\"Izaaz Azaam \",\r\n    \"lastName\" :\"Syahalam\",\r\n    \"mobileNumber\":\"087843107132\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/signup/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"signup",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin\",\r\n    \"password\":\"cimbh82022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search a trip between any two stops",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2NjIwNjcxOCwiaWF0IjoxNjY2MTg4NzE4fQ.NofQ7ylvX1VMy_y7Z4OKa-JsmmoCBJ1X5ckTZKEFZasYKjgWWPieRb2YVcP8NH31xeduZeHJ720Bcyb259dLNg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\":\"1\",\r\n    \"text2\":\"2\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/trip/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"trip",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all available stops",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2NjIwNjcxOCwiaWF0IjoxNjY2MTg4NzE4fQ.NofQ7ylvX1VMy_y7Z4OKa-JsmmoCBJ1X5ckTZKEFZasYKjgWWPieRb2YVcP8NH31xeduZeHJ720Bcyb259dLNg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/reservation/stop",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"reservation",
+								"stop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter search results with a date option",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2NjIwNjcxOCwiaWF0IjoxNjY2MTg4NzE4fQ.NofQ7ylvX1VMy_y7Z4OKa-JsmmoCBJ1X5ckTZKEFZasYKjgWWPieRb2YVcP8NH31xeduZeHJ720Bcyb259dLNg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"text\":\"10/10/2022\"\r\n\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/schedule/serach",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"schedule",
+								"serach"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book a ticket for a given trip schedule",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2NjIwNjcxOCwiaWF0IjoxNjY2MTg4NzE4fQ.NofQ7ylvX1VMy_y7Z4OKa-JsmmoCBJ1X5ckTZKEFZasYKjgWWPieRb2YVcP8NH31xeduZeHJ720Bcyb259dLNg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"seatNumber\":\"13\",\r\n    \"cancellable\":\"1\",\r\n    \"journeyDate\":\"10/20/2022\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/reservation/bookticket",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"reservation",
+								"bookticket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book a Schedule",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2NjE5OTk2MywiaWF0IjoxNjY2MTgxOTYzfQ.phCIdH8mEyhiC47eC9K3EpZXmL1t0UkmWN82xTxrSEzgVmw2-4vLNyvsJIwCfnHwkG-K0WzpmYwRSNfoOjjKQA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tripDate\":\"10/20/2022\",\r\n    \"avalableSeats\":\"20\",\r\n    \"tripDetail\":\"2\",\r\n    \"ticketSold\":\"1\"\r\n\r\n  \r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/reservation/ticketSchedule",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"reservation",
+								"ticketSchedule"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reservation Trips By Schedules",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2NjIwMzc2NCwiaWF0IjoxNjY2MTg1NzY0fQ.sQWi4ikFHZYcm4jPXxUjyYbsg7qCKV-Fiawtcfa1hYI29Xhup3SNRJBm13gCrJ1sMiAWONsjXfqfhTxstFzjTQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/reservation/tripschedules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"reservation",
+								"tripschedules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reservation Trips By Stops",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2NjIwMTA4MywiaWF0IjoxNjY2MTgzMDgzfQ.XSoipt2WqNaTICIfACM0D5a_w77qRInJC-MczJrP6cKm68tWgsEAqoQo0IoyFF93fJHBeGvjnLNIXEN-w15arA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/reservation/tripsbystops",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"reservation",
+								"tripsbystops"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Todo End User",
+			"item": [
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"cimbh82022\",\r\n    \"firstName\":\"Izaaz Azaam \",\r\n    \"lastName\" :\"Syahalam\",\r\n    \"mobileNumber\":\"087843107132\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update their profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJleHAiOjE2NjYyMDYzMDMsImlhdCI6MTY2NjE4ODMwM30.OHI2SywjAxKmIAotUIBpWwrwU6Z74FN6HEtlTILv-xwM53xdL3kkcf4CmM5CrPmJEsvoanUxyBVqxuJKyRxSfw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"cimbh820221\",\r\n    \"firstName\":\"Izaaz Azaam\",\r\n    \"lastName\" :\"Syahalam\",\r\n    \"mobileNumber\":\"087843107131\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/edit/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"edit",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticate End User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"cimbh820221\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create an agency",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJleHAiOjE2NjYyMDYzNzMsImlhdCI6MTY2NjE4ODM3M30.1VMgIIx_ZB3xdZBy0dij35c8E_vrqgCKbDoGbq-4cHZStfNgTHhfA13qHvg9v5ngNqNrSowkT4Ld0A3ZcNhdDw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\":\"A126\",\r\n    \"name\":\"New Pahala Kencana\",\r\n    \"details\":\"JDBW BUS\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/agency",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"agency"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add buses to the agency",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJleHAiOjE2NjYyMDYzNzMsImlhdCI6MTY2NjE4ODM3M30.1VMgIIx_ZB3xdZBy0dij35c8E_vrqgCKbDoGbq-4cHZStfNgTHhfA13qHvg9v5ngNqNrSowkT4Ld0A3ZcNhdDw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\":\"A1232\",\r\n    \"capasity\":\"30\",\r\n    \"make\":\"Touring\",\r\n    \"agency\" : \"3\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/bus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"bus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add trips consisting of predefined stops and buses",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJleHAiOjE2NjYyMDYzNzMsImlhdCI6MTY2NjE4ODM3M30.1VMgIIx_ZB3xdZBy0dij35c8E_vrqgCKbDoGbq-4cHZStfNgTHhfA13qHvg9v5ngNqNrSowkT4Ld0A3ZcNhdDw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fare\":\"190000\",\r\n    \"sourceStop\":\"1\",\r\n    \"desStop\":\"3\",\r\n    \"bus\":\"1\",\r\n    \"agency\":\"3\",\r\n    \"journeyTime\":\"120\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/trip",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"trip"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Todo CRUD",
+			"item": [
+				{
+					"name": "Add Role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpemFhenN5YWhhbGFtMjhAZ21haWwuY29tIiwiZXhwIjoxNjY1OTUxMjA2LCJpYXQiOjE2NjU5MzMyMDZ9.pj1FVUpG2DZ6aAdjhvdgYQHn7OhxutMc0q6iO-bGg0DJVZ1yqizPPvhrfUw-989TcymWlbnmn3YNG5KNhBRXPA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\":\"End User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Stop",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2NjIwNjcxOCwiaWF0IjoxNjY2MTg4NzE4fQ.NofQ7ylvX1VMy_y7Z4OKa-JsmmoCBJ1X5ckTZKEFZasYKjgWWPieRb2YVcP8NH31xeduZeHJ720Bcyb259dLNg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\":\"A1239\",\r\n    \"name\":\"STOP-E\",\r\n    \"detail\":\"JAKARTA\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/reservation/stop",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"reservation",
+								"stop"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
